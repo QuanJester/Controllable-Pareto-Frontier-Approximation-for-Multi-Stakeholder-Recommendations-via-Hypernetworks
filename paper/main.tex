@@ -1,0 +1,28 @@
+\documentclass[11pt,a4paper]{article}
+
+\usepackage[utf8]{inputenc}
+\usepackage{amsmath,amssymb,amsfonts}
+\usepackage{graphicx}
+\usepackage{booktabs}
+\usepackage{hyperref}
+\usepackage{natbib}
+
+\title{Pareto Frontier Approximation for Multi-Objective Recommender Systems via Hypernetworks}
+\author{Tran Nguyen Minh Quan}
+\date{\today}
+
+\begin{document}
+
+\maketitle
+
+\begin{abstract}
+Balancing competing stakeholder objectives such as accuracy, diversity, and provider fairness is a fundamental challenge in modern recommender systems. In this work, we propose a scalable framework based on Pareto Hypernetworks to continuously approximate the Pareto frontier. By conditioning a single recommendation architecture on explicit preference vectors, our approach enables real-time dynamic trade-offs without requiring repeated retraining.
+\end{abstract}
+
+\input{sections/intro}
+\input{sections/method}
+
+\bibliographystyle{plainnat}
+\bibliography{references}
+
+\end{document}

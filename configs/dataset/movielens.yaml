@@ -1,0 +1,16 @@
+# Cấu hình tập dữ liệu MovieLens (MovieLens-1M / MovieLens-100K)
+dataset_name: "movielens"
+data_path: "data/processed/movielens"
+
+preprocessing:
+  min_user_interactions: 5
+  min_item_interactions: 5
+  train_ratio: 0.8
+  val_ratio: 0.1
+  test_ratio: 0.1
+  negative_samples_per_pos: 4
+
+objectives_metadata:
+  genre_feature_col: "genres"
+  timestamp_col: "timestamp"
+  rating_threshold: 3.5

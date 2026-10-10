@@ -1,0 +1,17 @@
+# Cấu hình tập dữ liệu Amazon Reviews (Books/Electronics/Beauty)
+dataset_name: "amazon"
+category: "Electronics"
+data_path: "data/processed/amazon_electronics"
+
+preprocessing:
+  min_user_interactions: 5
+  min_item_interactions: 5
+  train_ratio: 0.8
+  val_ratio: 0.1
+  test_ratio: 0.1
+  negative_samples_per_pos: 4
+
+objectives_metadata:
+  category_feature_col: "category"
+  brand_feature_col: "brand"
+  price_feature_col: "price"

@@ -1,0 +1,20 @@
+\section{Methodology}
+\label{sec:method}
+
+\subsection{Problem Formulation}
+Let $\mathcal{U}$ and $\mathcal{I}$ denote the user and item sets, respectively. We consider $M$ objective functions:
+\begin{equation}
+    \min_{\theta} \mathcal{L}(\theta) = \left[ \mathcal{L}_1(\theta), \mathcal{L}_2(\theta), \dots, \mathcal{L}_M(\theta) \right]^\top,
+\end{equation}
+where $\mathcal{L}_1$ represents the ranking loss (e.g., Bayesian Personalized Ranking), $\mathcal{L}_2$ penalizes lack of diversity, and $\mathcal{L}_3$ regularizes provider exposure inequality.
+
+\subsection{Pareto Hypernetwork Architecture}
+We introduce a hypernetwork $H_\phi(r)$ parameterized by $\phi$, mapping an explicit preference ray $r = (r_1, \dots, r_M) \in \Delta^M$ (where $\sum_{m=1}^M r_m = 1, r_m \ge 0$) to model parameters or adaptation vectors $\theta(r)$:
+\begin{equation}
+    \theta(r) = H_\phi(r).
+\end{equation}
+During training, we sample $r \sim \text{Dirichlet}(\alpha)$ at each iteration and optimize:
+\begin{equation}
+    \min_{\phi} \mathbb{E}_{r \sim \Delta^M} \left[ \sum_{m=1}^M r_m \mathcal{L}_m(H_\phi(r)) \right].
+\end{equation}
+At inference time, an arbitrary trade-off point on the Pareto frontier can be selected instantaneously by passing the corresponding preference vector $r$.

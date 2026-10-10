@@ -1,0 +1,36 @@
+# Cấu hình mặc định chung (General Default Configuration)
+
+seed: 42
+device: "cuda" # 'cuda' hoặc 'cpu'
+
+# Huấn luyện
+training:
+  epochs: 100
+  batch_size: 1024
+  learning_rate: 0.001
+  weight_decay: 1e-4
+  early_stopping_patience: 10
+  eval_every_epochs: 1
+  save_best: true
+
+# Thiết lập đa mục tiêu (Multi-Objective Settings)
+moo:
+  num_objectives: 3
+  objectives:
+    - name: "accuracy"
+      loss_type: "bpr"
+    - name: "diversity"
+      loss_type: "intra_list_diversity"
+    - name: "fairness"
+      loss_type: "item_exposure_fairness"
+  preference_sampling: "dirichlet" # 'dirichlet' hoặc 'grid'
+  dirichlet_alpha: 1.0
+
+# Đường dẫn lưu trữ (Output Paths)
+paths:
+  data_dir: "data"
+  raw_data_dir: "data/raw"
+  processed_data_dir: "data/processed"
+  checkpoints_dir: "outputs/checkpoints"
+  logs_dir: "outputs/logs"
+  figures_dir: "outputs/figures"

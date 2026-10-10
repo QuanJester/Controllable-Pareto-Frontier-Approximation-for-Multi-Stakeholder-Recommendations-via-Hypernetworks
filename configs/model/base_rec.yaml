@@ -1,0 +1,9 @@
+# Cấu hình mô hình gợi ý cơ sở (Base Recommender Architecture)
+model_name: "base_rec"
+
+backbone:
+  type: "LightGCN"          # 'MF', 'LightGCN', 'SASRec'
+  embedding_dim: 64
+  num_layers: 3
+  dropout: 0.1
+  keep_prob: 0.8            # Tỉ lệ drop-edge trong Graph Convolution

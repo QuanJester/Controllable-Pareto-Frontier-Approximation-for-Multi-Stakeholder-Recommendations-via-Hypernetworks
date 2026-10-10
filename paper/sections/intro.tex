@@ -1,0 +1,8 @@
+\section{Introduction}
+\label{sec:intro}
+
+Recommender systems have evolved from optimizing a single objective (e.g., click-through rate or rating accuracy) into complex ecosystems balancing conflicting goals among multiple stakeholders~\citep{abdollahpouri2020multistakeholder}. Such goals frequently include recommendation accuracy, catalog diversity, novelty, and item-provider fairness~\citep{milojkovic2020multi}.
+
+Traditional approaches to multi-objective optimization (MOO) in recommendation systems rely on linear scalarization with predefined static preference weights. However, this approach requires training independent models for every desired trade-off, which is computationally prohibitive and cannot adapt to dynamic user preferences in real time.
+
+To overcome these challenges, we explore continuous Pareto frontier approximation via Hypernetworks~\citep{navon2020learning}. By conditioning the recommendation backbone on a continuous preference vector $r \in \Delta^m$, our framework can generate the entire family of Pareto-optimal models in a single training run.

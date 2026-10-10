@@ -1,0 +1,15 @@
+# Cấu hình kiến trúc Hypernetwork
+model_name: "hypernet_rec"
+
+hypernetwork:
+  preference_dim: 3         # Số lượng mục tiêu (kích thước vector preference r)
+  hidden_dims: [64, 128]    # Các lớp ẩn của Hypernetwork
+  activation: "relu"        # 'relu', 'leaky_relu', 'tanh'
+  dropout: 0.1
+  output_scale: 1.0         # Tỉ lệ co giãn trọng số sinh ra
+
+backbone:
+  type: "LightGCN"          # Mô hình gợi ý gốc: 'MF', 'LightGCN', 'SASRec'
+  embedding_dim: 64
+  num_layers: 3
+  dropout: 0.1

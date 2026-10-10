@@ -1,0 +1,18 @@
+# Thí nghiệm cụ thể kết hợp Model + Dataset + Params
+experiment_name: "hypernet_lightgcn_movielens_3obj"
+
+model:
+  model_name: "hypernet_rec"
+  backbone_type: "LightGCN"
+  hypernet_hidden_dims: [64, 128]
+
+dataset:
+  name: "movielens"
+  split: "random_80_10_10"
+
+training:
+  epochs: 80
+  batch_size: 1024
+  lr: 0.001
+  preference_sampling: "dirichlet"
+  eval_samples: 25  # Số vector preference lấy mẫu để kiểm tra trên Pareto frontier
