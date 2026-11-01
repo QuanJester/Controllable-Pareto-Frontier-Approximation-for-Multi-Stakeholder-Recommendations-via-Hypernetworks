@@ -64,3 +64,12 @@ desktop.ini
 # Environment variables
 .env
 .env.local
+
+# Local reference documents and research papers (untracked from git repo)
+Convex Optimization/
+Fundamentals/
+Implementations/
+Loss-function architect/
+paper/
+Tóm tắt kiến thức lý thuyết/
+*.docx
