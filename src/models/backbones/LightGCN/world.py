@@ -20,7 +20,7 @@ CURRENT_DIR = os.path.dirname(os.path.abspath(__file__))
 REPO_ROOT = os.path.abspath(os.path.join(CURRENT_DIR, "../../../.."))
 ROOT_PATH = REPO_ROOT
 CODE_PATH = CURRENT_DIR
-DATA_PATH = os.path.join(ROOT_PATH, "LightGCN-PyTorch", "data")
+DATA_PATH = os.path.join(ROOT_PATH, "data", "raw", "LightGCN")
 BOARD_PATH = join(CODE_PATH, 'runs')
 FILE_PATH = join(CODE_PATH, 'checkpoints')
 import sys

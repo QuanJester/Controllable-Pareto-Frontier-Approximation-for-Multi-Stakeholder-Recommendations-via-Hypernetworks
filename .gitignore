@@ -47,6 +47,7 @@ data/processed/*
 !data/processed/.gitkeep
 data/synthetic/*
 !data/synthetic/.gitkeep
+data/cifar-10*
 
 # Outputs (checkpoints, experiment logs, figures)
 outputs/checkpoints/*
@@ -55,6 +56,9 @@ outputs/logs/*
 !outputs/logs/.gitkeep
 outputs/figures/*
 !outputs/figures/.gitkeep
+**/runs/
+*.pth
+.rendered.*.cpp
 
 # OS specific
 .DS_Store
